@@ -9,32 +9,24 @@
 #ifndef TestUtility_H
 #define TestUtility_H
 
-class TestUtility
-{
-  public:
-    TestUtility() { }
-
-    /**************************************************************************/
-    /*!
-        @brief  Prints a list of elements.
-        @param  list    Array of elements to be sorted
-        @param  n       Length of the array
-    */
-    /**************************************************************************/
-    void printList(int32_t list[], uint32_t n) {
-        Serial.print("[");
-        for(int i = 0; i < n; i++) {
-            Serial.print(list[i]);
-            
-            if (i == len-1) {
-            Serial.println("]");
-            } else {
-            Serial.print(", ");
-            }
+void printList(int32_t list[], uint32_t n) {
+    Serial.print("[");
+    
+    for (int32_t i = 0; i < n; i++) {
+        Serial.print(list[i]);
+        
+        if (i == n-1) {
+        Serial.println("]");
+        } else {
+        Serial.print(", ");
         }
     }
+    delay(1);
+}
 
-  private:
+void shuffle(int32_t list[], uint32_t n) {
+    for (int32_t i = 0; i < n; i++) {
 
-};
+    }
+}
 #endif
