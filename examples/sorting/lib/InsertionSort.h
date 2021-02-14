@@ -1,10 +1,10 @@
 /*
-   File:      InsertionSort.h
-   Authors:   Luke de Munk
-   Class:     InsertionSort
-   Version:   1.0
-
-   InsertionSort feature to sort arrays.
+ * File:      InsertionSort.h
+ * Authors:   Luke de Munk
+ * Class:     InsertionSort
+ * Version:   1.0
+ *
+ * InsertionSort feature to sort arrays.
 */
 #ifndef InsertionSort_H
 #define InsertionSort_H
@@ -46,8 +46,13 @@ class InsertionSort
 
         for (uint32_t i = 1; i < n; i++) {
             /* If debug mode is on, print list */
-            if (_debugMode)
+            if (_debugMode) 
                 printList(list, n);
+                
+            /* If display function is activ, show on screen */
+            #ifdef DISPLAY_SORTING
+                showList(list, n);
+            #endif
                 
             delay(0);                                                           //Needed, otherwise +-20% of list elements gets random
                                                                                 //Not clear why this happens yet

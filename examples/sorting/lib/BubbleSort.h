@@ -1,10 +1,10 @@
 /*
-   File:      BubbleSort.h
-   Authors:   Luke de Munk
-   Class:     BubbleSort
-   Version:   1.0
-
-   BubbleSort feature to sort arrays.
+ * File:      BubbleSort.h
+ * Authors:   Luke de Munk
+ * Class:     BubbleSort
+ * Version:   1.0
+ *
+ * BubbleSort feature to sort arrays.
 */
 #ifndef BubbleSort_H
 #define BubbleSort_H
@@ -50,6 +50,11 @@ class BubbleSort
                 /* If debug mode is on, print list */
                 if (_debugMode)
                     printList(list, n);
+
+                /* If display function is active, show on screen */
+                #ifdef DISPLAY_SORTING
+                    showList(list, n);
+                #endif
             }
         }
     }  

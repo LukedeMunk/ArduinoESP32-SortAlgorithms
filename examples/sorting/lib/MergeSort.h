@@ -1,10 +1,10 @@
 /*
-   File:      MergeSort.h
-   Authors:   Luke de Munk
-   Class:     MergeSort
-   Version:   1.0
-
-   MergeSort feature to sort arrays.
+ * File:      MergeSort.h
+ * Authors:   Luke de Munk
+ * Class:     MergeSort
+ * Version:   1.0
+ *
+ * MergeSort feature to sort arrays.
 */
 #ifndef MergeSort_H
 #define MergeSort_H
@@ -122,6 +122,11 @@ class MergeSort
         /* If debug mode is on, print list */
         if (_debugMode)
             printList(list, _n);
+
+        /* If display function is active, show on screen */
+        #ifdef DISPLAY_SORTING
+            showList(list, _n);
+        #endif
 
         uint32_t middlePoint = (l+r-1)/2;
 

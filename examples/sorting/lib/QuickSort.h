@@ -1,10 +1,10 @@
 /*
-   File:      QuickSort.h
-   Authors:   Luke de Munk
-   Class:     QuickSort
-   Version:   1.0
-
-   QuickSort feature to sort arrays.
+ * File:      QuickSort.h
+ * Authors:   Luke de Munk
+ * Class:     QuickSort
+ * Version:   1.0
+ *
+ * QuickSort feature to sort arrays.
 */
 #ifndef QuickSort_H
 #define QuickSort_H
@@ -87,6 +87,11 @@ class QuickSort
         /* If debug mode is on, print list */
         if (_debugMode)
             printList(list, _n);
+
+        /* If display function is active, show on screen */
+        #ifdef DISPLAY_SORTING
+            showList(list, _n);
+        #endif
 
         if (low < high) {
             int32_t pi = _partition(list, low, high);                           //Retrieve partitioning index, list[p] is now at right place

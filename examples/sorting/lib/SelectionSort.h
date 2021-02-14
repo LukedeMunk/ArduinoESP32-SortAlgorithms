@@ -45,6 +45,11 @@ class SelectionSort
         if (_debugMode)
             printList(list, n);
 
+        /* If display function is active, show on screen */
+        #ifdef DISPLAY_SORTING
+            showList(list, n);
+        #endif
+
         uint32_t i, j, min_idx;
     
         /* One by one move boundary of unsorted subarray */
