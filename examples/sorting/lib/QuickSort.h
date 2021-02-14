@@ -16,7 +16,7 @@ class QuickSort
 
     /**************************************************************************/
     /*!
-        @brief  Sort a list of elements.
+        @brief  Sorts a list of elements.
         @param  list    Array of elements to be sorted
         @param  n       Length of the array
     */
@@ -31,7 +31,7 @@ class QuickSort
   private:
     /**************************************************************************/
     /*!
-        @brief  Partiton a part of the list.
+        @brief  Partitons a part of the list.
         @param  list    Array of elements to be sorted
         @param  low     Low index of the partition
         @param  high    High index of the partition
@@ -54,7 +54,7 @@ class QuickSort
 
     /**************************************************************************/
     /*!
-        @brief  Sort a list of elements (same as sort() except here is a low param).
+        @brief  Sorts a list of elements (same as sort() except here is a low param).
         @param  list    Array of elements to be sorted
         @param  low     Low index to sort
         @param  high    High index to sort
@@ -68,9 +68,10 @@ class QuickSort
             _sort(list, pi + 1, high);
         }
     }
+    
     /**************************************************************************/
     /*!
-        @brief  Swap two values using their addresses.
+        @brief  Swaps two values using their addresses.
         @param  a   First value
         @param  b   Second value
     */
