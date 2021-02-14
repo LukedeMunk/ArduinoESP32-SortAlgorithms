@@ -10,14 +10,13 @@
 #include "./lib/SelectionSort.h"
 #include "./lib/InsertionSort.h"
 #include "./lib/BubbleSort.h"
+#include "./lib/TestUtility.h"
 
-QuickSort qs;
-MergeSort ms;
-SelectionSort ss;
-InsertionSort is;
-BubbleSort bs;
-
-void displayList(int32_t list[], int32_t len);
+QuickSort qs(true);
+MergeSort ms(true);
+SelectionSort ss(true);
+InsertionSort is(true);
+BubbleSort bs(true);
 
 /**************************************************************************/
 /*!
@@ -30,16 +29,16 @@ void setup() {
   int32_t list[] = {2, 1, 3, 4, 6, 5, 8, 9, 0};
 
   Serial.print("Unsorted list: ");
-  displayList(list, 9);
+  printList(list, 9);
 
-  //qs.sort(list, 9);
-  //ms.sort(list, 9);
-  //ss.sort(list, 9);
-  //is.sort(list, 9);
+  qs.sort(list, 9);
+  ms.sort(list, 9);
+  ss.sort(list, 9);
+  is.sort(list, 9);
   bs.sort(list, 9);
 
   Serial.print("Sorted list: ");
-  displayList(list, 9);
+  printList(list, 9);
 }
 
 /**************************************************************************/
@@ -50,17 +49,4 @@ void setup() {
 void loop() {
   //Serial.println("loop");
   delay(10000);
-}
-
-void displayList(int32_t list[], int32_t len) {
-  Serial.print("[");
-  for(int i = 0; i < len; i++) {
-    Serial.print(list[i]);
-    
-    if (i == len-1) {
-      Serial.println("]");
-    } else {
-      Serial.print(", ");
-    }
-  }
 }

@@ -8,11 +8,30 @@
 */
 #ifndef QuickSort_H
 #define QuickSort_H
+#include "TestUtility.h"
 
 class QuickSort
 {
   public:
-    QuickSort() { }
+    QuickSort(bool debugMode = false) { _debugMode = debugMode; _n = 0; }
+
+    /**************************************************************************/
+    /*!
+        @brief  Enables debug mode.
+    */
+    /**************************************************************************/
+    void enableDebug() {
+        _debugMode = true;
+    }
+
+    /**************************************************************************/
+    /*!
+        @brief  Disables debug mode.
+    */
+    /**************************************************************************/
+    void disableDebug() {
+        _debugMode = false;
+    }
 
     /**************************************************************************/
     /*!
@@ -22,6 +41,7 @@ class QuickSort
     */
     /**************************************************************************/
     void sort(int32_t list[], uint32_t n) {
+        _n = n;
         int32_t pi = _partition(list, 0, n-1);                                  //Retrieve partitioning index, list[p] is now at right place
 
         _sort(list, 0, pi - 1);                                                 //Separately sort elements before partition and after partition 
@@ -29,6 +49,9 @@ class QuickSort
     }
     
   private:
+    uint32_t _n;
+    bool _debugMode;
+
     /**************************************************************************/
     /*!
         @brief  Partitons a part of the list.
@@ -61,6 +84,10 @@ class QuickSort
     */
     /**************************************************************************/
     void _sort(int32_t list[], int32_t low, int32_t high) {
+        /* If debug mode is on, print list */
+        if (_debugMode)
+            printList(list, _n);
+
         if (low < high) {
             int32_t pi = _partition(list, low, high);                           //Retrieve partitioning index, list[p] is now at right place
 

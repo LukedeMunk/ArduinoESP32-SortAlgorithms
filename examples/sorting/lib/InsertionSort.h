@@ -8,11 +8,30 @@
 */
 #ifndef InsertionSort_H
 #define InsertionSort_H
+#include "TestUtility.h"
 
 class InsertionSort
 {
   public:
-    InsertionSort() { }
+    InsertionSort(bool debugMode = false) { _debugMode = debugMode; }
+
+    /**************************************************************************/
+    /*!
+        @brief  Enables debug mode.
+    */
+    /**************************************************************************/
+    void enableDebug() {
+        _debugMode = true;
+    }
+
+    /**************************************************************************/
+    /*!
+        @brief  Disables debug mode.
+    */
+    /**************************************************************************/
+    void disableDebug() {
+        _debugMode = false;
+    }
 
     /**************************************************************************/
     /*!
@@ -26,6 +45,10 @@ class InsertionSort
         uint32_t j = 0;
 
         for (uint32_t i = 1; i < n; i++) {
+            /* If debug mode is on, print list */
+            if (_debugMode)
+                printList(list, n);
+                
             delay(0);                                                           //Needed, otherwise +-20% of list elements gets random
                                                                                 //Not clear why this happens yet
             
@@ -43,5 +66,8 @@ class InsertionSort
             list[j + 1] = key;
         }
     }
+
+  private:
+    bool _debugMode;
 };
 #endif

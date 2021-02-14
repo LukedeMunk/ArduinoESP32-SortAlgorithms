@@ -8,11 +8,30 @@
 */
 #ifndef MergeSort_H
 #define MergeSort_H
+#include "TestUtility.h"
 
 class MergeSort
 {
   public:
-    MergeSort() { }
+    MergeSort(bool debugMode = false) { _debugMode = debugMode; _n = 0; }
+
+    /**************************************************************************/
+    /*!
+        @brief  Enables debug mode.
+    */
+    /**************************************************************************/
+    void enableDebug() {
+        _debugMode = true;
+    }
+
+    /**************************************************************************/
+    /*!
+        @brief  Disables debug mode.
+    */
+    /**************************************************************************/
+    void disableDebug() {
+        _debugMode = false;
+    }
 
     /**************************************************************************/
     /*!
@@ -22,6 +41,7 @@ class MergeSort
     */
     /**************************************************************************/
     void sort(int32_t list[], uint32_t n) {
+        _n = n;
         uint32_t middlePoint = n/2;
         _sort(list, 0, middlePoint);
         _sort(list, middlePoint+1, n);
@@ -29,6 +49,9 @@ class MergeSort
     }
 
   private:
+    uint32_t _n;
+    bool _debugMode;
+
     /**************************************************************************/
     /*!
         @brief  Merges two subarrays of list[].
@@ -95,6 +118,10 @@ class MergeSort
         if(l >= r){
             return;                                                             //Returns recursively
         }
+
+        /* If debug mode is on, print list */
+        if (_debugMode)
+            printList(list, _n);
 
         uint32_t middlePoint = (l+r-1)/2;
 

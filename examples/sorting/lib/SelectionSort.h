@@ -8,11 +8,30 @@
 */
 #ifndef SelectionSort_H
 #define SelectionSort_H
+#include "TestUtility.h"
 
 class SelectionSort
 {
   public:
-    SelectionSort() { }
+    SelectionSort(bool debugMode = false) { _debugMode = debugMode; }
+
+    /**************************************************************************/
+    /*!
+        @brief  Enables debug mode.
+    */
+    /**************************************************************************/
+    void enableDebug() {
+        _debugMode = true;
+    }
+
+    /**************************************************************************/
+    /*!
+        @brief  Disables debug mode.
+    */
+    /**************************************************************************/
+    void disableDebug() {
+        _debugMode = false;
+    }
 
     /**************************************************************************/
     /*!
@@ -21,11 +40,15 @@ class SelectionSort
         @param  n       Length of the array
     */
     /**************************************************************************/
-    void sort(int32_t list[], uint32_t n) {  
-        uint32_t i, j, min_idx;  
+    void sort(int32_t list[], uint32_t n) {
+        /* If debug mode is on, print list */
+        if (_debugMode)
+            printList(list, n);
+
+        uint32_t i, j, min_idx;
     
         /* One by one move boundary of unsorted subarray */
-        for (i = 0; i < n-1; i++) {  
+        for (i = 0; i < n-1; i++) {
             min_idx = i;
 
             /* Find the minimum element in unsorted array */
@@ -39,6 +62,8 @@ class SelectionSort
     }  
     
   private:
+    bool _debugMode;
+
     /**************************************************************************/
     /*!
         @brief  Swaps two values using their addresses.
