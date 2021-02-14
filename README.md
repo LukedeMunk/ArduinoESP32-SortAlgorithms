@@ -24,7 +24,7 @@ Clone the repository, copy the "SortAlgorithms" map in the Arduino libraries map
 
 ## Questions or feedback?
 
-You can submit an issue if you have a question or if you have feedback on this repository. If you are interested in more of my projects, checkout my GitHub [profile](https://github.com/LukedeMunk). If you are interested in hiring me, checkout my [LinkedIn](https://www.linkedin.com/in/luke-de-munk/).
+You can submit an issue if you have questions or feedback for this repository. If you are interested in more of my projects, checkout my GitHub [profile](https://github.com/LukedeMunk). If you are interested in hiring me, checkout my [website](https://munkservices.com) or [LinkedIn](https://www.linkedin.com/in/luke-de-munk/).
 
 ## Authors
 
