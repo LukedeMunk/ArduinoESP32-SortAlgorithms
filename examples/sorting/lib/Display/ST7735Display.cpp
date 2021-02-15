@@ -6,6 +6,7 @@
  *
  * Test utility test arrays.
 */
+#ifdef DISPLAY_SORTING
 #include "./ST7735Display.h"
 
 
@@ -32,7 +33,7 @@ ST7735Display::ST7735Display() {
     @param  n       Length of the array
 */
 /**************************************************************************/
-void ST7735Display::showList(int32_t list[], uint32_t n) {
+void ST7735Display::drawList(int32_t list[], uint32_t n) {
     uint16_t height = 0;
 
     if (n > SCREEN_WIDTH)
