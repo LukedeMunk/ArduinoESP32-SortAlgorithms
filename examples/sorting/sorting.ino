@@ -12,11 +12,11 @@
 #include "./lib/BubbleSort.h"
 #include "./lib/TestUtility.h"
 
-QuickSort qs(true);
-MergeSort ms(true);
-SelectionSort ss(true);
-InsertionSort is(true);
-BubbleSort bs(true);
+QuickSort qs;
+MergeSort ms;
+SelectionSort ss;
+InsertionSort is;
+BubbleSort bs;
 
 /**************************************************************************/
 /*!
@@ -26,19 +26,31 @@ BubbleSort bs(true);
 void setup() {
   Serial.begin(9600);
   
-  int32_t list[] = {2, 1, 3, 4, 6, 5, 8, 9, 0};
-
+  int32_t list[10];
+  randomList(list, 10);
   Serial.print("Unsorted list: ");
-  printList(list, 9);
+  printList(list, 10);
 
-  qs.sort(list, 9);
-  ms.sort(list, 9);
-  ss.sort(list, 9);
-  is.sort(list, 9);
-  bs.sort(list, 9);
+  qs.sort(list, 10);
+  shuffle(list, 10);
+  printList(list, 10);
+  
+  ms.sort(list, 10);
+  shuffle(list, 10);
+  printList(list, 10);
+  
+  ss.sort(list, 10);
+  shuffle(list, 10);
+  printList(list, 10);
+  
+  is.sort(list, 10);
+  shuffle(list, 10);
+  printList(list, 10);
+  
+  bs.sort(list, 10);
 
   Serial.print("Sorted list: ");
-  printList(list, 9);
+  printList(list, 10);
 }
 
 /**************************************************************************/
