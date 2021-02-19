@@ -9,12 +9,13 @@
 #ifndef TestUtility_H
 #define TestUtility_H
 
-//#define DISPLAY_SORTING                                                     //Comment out if screen is not used
+#define DISPLAY_SORTING                                                     //Comment out if screen is not used
 
 #ifdef DISPLAY_SORTING
     #include "./Display/ST7735Display.h"
-    ST7735Display display;
+    ST7735Display displ;
 #endif
+
 /**************************************************************************/
 /*!
     @brief  Prints a list of elements.
@@ -46,7 +47,7 @@ void printList(int32_t list[], uint32_t n) {
 /**************************************************************************/
 void showList(int32_t list[], uint32_t n) {
     #ifdef DISPLAY_SORTING
-        display.drawList(list, n);
+        displ.drawList(list, n);
     #endif
 }
 
